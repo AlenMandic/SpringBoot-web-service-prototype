@@ -3,26 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Management API</title>
+    <title>Spring Boot Prototype by Alen</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
-    <h1>Employee Management System</h1>
+    <h1>Spring Boot Prototype by Alen</h1>
     <p>Welcome to our REST API web-service prototype!</p>
 
     <div class="api-links">
         <h2>Current active endpoints:</h2>
         <ul>
-            <li><a href="/api/employees">View All Employees</a></li>
-            <li><a href="/api/employees/1">View Employee #1</a></li>
-            <li><a href="/api/employees/2">View Employee #2</a></li>
+            <li><a href="/api/employees">GET -> View All Employees</a></li>
+            <li><a href="/api/employees/1">GET -> View Employee #1</a></li>
+            <li><a href="/api/employees/2">GET -> View Employee #2</a></li>
+            <li>POST -> ADD NEW EMPLOYEE via QueryParameters</li>
+            <li>DELETE -> REMOVE AN EMPLOYEE via PathVariable</li>
+            <p>API Testing was done in Postman!</p>
         </ul>
     </div>
 
     <div class="info">
         <p>This is a Spring Boot prototype application by Alen.</p>
         <p>Click the links above to test the REST API!</p>
+        <ul>
+            <li>TODO's remaining:</li>
+            <li>Add and integrate MSSQL Database support, ORM and Async operations support</li>
+            <li>Have the Spring Web service and the database both run on Docker using DockerCompose</li>
+            <li>Add Exhaustive Api Testing</li>
+            <li>Once the entire backend work is done, a Front-End UI using React / TypeScript for basic REST operations</li>
+        </ul>
     </div>
 </div>
 </body>

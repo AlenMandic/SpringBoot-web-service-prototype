@@ -62,4 +62,9 @@ public class EmployeeService {
             return null;
         }
     }
+
+    public boolean removeEmployee(Long employeeId) {
+        return ourEmployees.removeIf(employee -> Objects.equals(employee.getId(), employeeId));
+    }
+
 }

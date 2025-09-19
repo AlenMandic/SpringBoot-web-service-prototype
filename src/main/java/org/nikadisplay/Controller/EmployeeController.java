@@ -47,4 +47,16 @@ public class EmployeeController {
             }
             return new ResponseEntity<>("Employee list is currently at max capacity of 20! To add a new employee, you must delete one first.", HttpStatus.BAD_REQUEST);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> removeEmployee(@PathVariable Long id) {
+
+        boolean updatedList = employeeService.removeEmployee(id);
+
+        if(updatedList) {
+            return ResponseEntity.ok("Removed employee." );
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Employee not found. ");
+    }
+
 }
