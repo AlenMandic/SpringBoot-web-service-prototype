@@ -2,10 +2,20 @@
 
 package org.nikadisplay.Model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "employees")
 public class Employee {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name="salary")
     private int salary;
 
     public Employee() {} // Empty constructor needed for JSON parsing?

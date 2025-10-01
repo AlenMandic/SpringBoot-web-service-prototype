@@ -31,21 +31,18 @@ public class EmployeeController {
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
         Employee employee = employeeService.getEmployeeById(id);
 
-        if (employee == null) {
-            return ResponseEntity.notFound().build();
-        }
         return ResponseEntity.ok(employee);
     }
 
     @PostMapping
     public ResponseEntity<?> addNewEmployee(@RequestParam String newName, @RequestParam int newSalary) {
 
-            List<Employee> tryAddNewEmployee = employeeService.addEmployee(newName, newSalary);
+        boolean tryAddNewEmployee = employeeService.addEmployee(newName, newSalary);
 
-            if (tryAddNewEmployee != null) {
-                return new ResponseEntity<>(tryAddNewEmployee, HttpStatus.CREATED);
-            }
-            return new ResponseEntity<>("Employee list is currently at max capacity of 20! To add a new employee, you must delete one first.", HttpStatus.BAD_REQUEST);
+        if (tryAddNewEmployee) {
+            return  ResponseEntity.status(HttpStatus.CREATED).body("Added a new employee!");
+        }
+        return ResponseEntity.status(HttpStatus.NOT_MODIFIED).body("Couldn't add new employee");
     }
 
     @DeleteMapping("/{id}")
