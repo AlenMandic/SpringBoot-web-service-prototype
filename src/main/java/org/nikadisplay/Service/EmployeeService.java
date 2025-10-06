@@ -18,6 +18,7 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
+    // Employee factory
     public Employee createEmployee(String employeeName, int employeeSalary) {
 
         Employee employee = new Employee();
@@ -35,11 +36,8 @@ public class EmployeeService {
     // Return an employee by ID
     public Employee getEmployeeById(Long employeeId) {
 
-        for (Employee ourEmployee : employeeRepository.findAll()) {
-
-            if (Objects.equals(ourEmployee.getId(), employeeId)) return ourEmployee;
-        }
-        throw new EmployeeIdNotFoundException(employeeId);
+        return employeeRepository.findById(employeeId)
+                .orElseThrow(() -> new EmployeeIdNotFoundException(employeeId));
     }
 
     public boolean addEmployee(String name, int salary) {

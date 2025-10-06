@@ -34,6 +34,13 @@ dependencies {
     implementation 'me.paulschwarz:spring-dotenv:4.0.0'
 }
 
+
 tasks.named('test') {
     useJUnitPlatform()
+
+    testLogging {
+        events = ["passed", "skipped", "failed"]
+        showStandardStreams = true
+        exceptionFormat = "full"
+    }
 }
