@@ -18,7 +18,7 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    // Employee factory
+    // Employee Factory
     public Employee createEmployee(String employeeName, int employeeSalary) {
 
         Employee employee = new Employee();
