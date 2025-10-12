@@ -9,6 +9,7 @@ A Spring Boot web service prototype for employee management operations, built wi
 - Service layer pattern implementation
 - Custom exception handling
 - Static web resources with documentation
+- SQL Express Database with production / testing enviroments for safe testing
 
 ## Technology Stack
 
@@ -51,17 +52,11 @@ src/main/java/org/nikadisplay/
 
 The homepage serves as documentation for available endpoints.
 
-## Upcoming Features
-
-- Database integration
-- Enhanced exception handling
-- Comprehensive testing suite
-- Production deployment
-
 ## Development Status
 
 This project is currently in active development as an internal service tool.
 
 ---
+
 
 *Live service demo coming soon*
